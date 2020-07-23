@@ -39,8 +39,16 @@ const Board: React.FC = () => {
 
     const records = response.data.records;
     const foundDecks: IDeckData[] = [];
+    const keys: Array<string> = [];
 
-    let keys = Object.keys(records[0].fields);
+    records.forEach(record => {
+      let recordKeys = Object.keys(record.fields);
+      recordKeys.forEach(recordKey => {
+        if (keys.indexOf(recordKey) === -1) {
+          keys.push(recordKey);
+        }
+      });
+    });
 
     keys.forEach(key => {
       foundDecks.push({ name: key, cards: [] });
