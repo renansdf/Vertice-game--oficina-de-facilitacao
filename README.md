@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Vértice | Game Oficina de Facilitação
 
-## Available Scripts
+Esta aplicação foi desenvolvida inicialmente para apoiar o processo educativo da oficina de facilitação da Vértice de Setembro 2020.
 
-In the project directory, you can run:
+### Resumo
+Jogo de perguntas e respostas para ser usado no processo de instruir os jogadores sobre metodologias de facilitação de processos.
 
-### `yarn start`
+### Requisitos não funcionais
+- Front end em React
+- Cartas são alimentadas por planilhas
+- Apenas um jogador mexe no tabuleiro e deve compartilhar sua tela
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Regras
+**Regras de jogadores**
+- Quanto tempo um jogador tem para responder uma pergunta?
+- Como um jogador é selecionado para responder a pergunta?
+- Como os jogadores podem pedir ajuda aos demais jogadores ao responder uma pergunta?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Regras de facilitação**
+- Qual deve ser o critério para o facilitador selecionar a próxima carta no início de uma rodada?
 
-### `yarn test`
+### Requisitos funcionais
+**Montagem**
+- Uma pessoa (o convidado) deve assumir o papel do “cliente”. Seu objetivo é julgar as respostas dos jogadores e atribuir uma nota à cada uma: bom, médio ou ruim
+- Uma pessoa deve assumir o papel do facilitador. Apenas este papel interage com a interface do jogo. Este deve compartilhar sua tela para que todos possam visualizar o andamento
+- Um grupo de pessoas deve assumir o papel de jogadores, e sua responsabilidade durante a experiência é responder as perguntas a fim de satisfazer o cliente
+- Facilitador deve poder criar uma sessão de jogo alimentando a matriz com uma planilha organizada em perguntas, destinos e histórias
+- O Tempo de duração da sessão deve ser previamente estabelecido
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Rodada**
+- Facilitador deve poder selecionar a próxima carta de um dentre os três decks de perguntas, destinos e histórias. Para fazer a seleção, ele deve seguir as regras de facilitação
+- A carta deve ser revelada e deve expor três gradações: boa resposta, resposta neutra e resposta ruim
+- O jogador designado pelo grupo deve responder a pergunta de acordo com as regras de jogadores
+- O cliente deve julgar a resposta e atribuir-lhe uma nota. O facilitador deve selecionar a nota que o cliente deu
+- A carta com a pergunta visível e a nota atribuída devem permanecer visíveis na interface
+- Inicia-se outra rodada
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Condição de vitória**
+- O jogo deve terminar quando o limite de tempo do grupo acabar
+- O jogo deve terminar quando o cliente estiver satisfeito e determinar o fim da experiência
