@@ -33,7 +33,7 @@ const Board: React.FC = () => {
   const getDecks = useCallback(async () => {
     const response: IAirTableResponseData = await api.get('', {
       headers: {
-        Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_TOKEN}`,
       }
     });
 
