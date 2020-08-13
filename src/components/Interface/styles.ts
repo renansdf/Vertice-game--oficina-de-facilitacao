@@ -46,7 +46,7 @@ export const Deck = styled.div`
 
 export const Questions = styled.div`
   width: 90%;
-  background-color: rgb(0 0 0 / 16%);
+  background-color: rgb(16 1 98 / 18%);
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -54,7 +54,7 @@ export const Questions = styled.div`
   border-radius: 11px;
 
   p{
-    height: 25vh;
+    height: 24vh;
     font-size: 22px;
     max-width: 800px;
     text-align: center;
@@ -69,22 +69,37 @@ export const Questions = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
 
     button{
       transition: all .4s;
       text-transform: uppercase;
       background: none;
       border: none;
-      margin: 0 10px;
+      margin: 0px;
       background-color: #fff;
-      border-radius: 25px;
-      padding: 5px 15px;
+      color: #100162;
+      border-radius: 0px;
+      padding: 12px 15px;
       font-size: 13px;
       letter-spacing: .6px;
-      box-shadow: 0px 0px 10px -1px #fff;
+      box-shadow: 0 7px 0 0 #100162, 0 10px 5px 0px #e56df6;
+      border-left: 1px solid #100162;
+      border-right: 1px solid #100162;
       &:hover{
-        transform: translateY(-3px);
+        transform: translateY(2px);
+        box-shadow: 0 5px 0 0 #100162, 0 8px 5px 0px #e56df6;
+      }
+      &:first-child{
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        border: none;
+      }
+
+      &:last-child{
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border: none;
       }
     }
   }
@@ -94,13 +109,14 @@ export const UsedCards = styled.div`
   height: 35vh;
   padding: 5vh 0 10px;
   overflow: auto;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
-  justify-content: center;
+  justify-content: flex-start;
 
   > div{
+    width: 90%;
     max-width: 190px;
     height: auto;
     display: flex;
@@ -113,10 +129,10 @@ export const UsedCards = styled.div`
     line-height: 1.2em;
     overflow: auto;
     margin: 0 20px;
-    color: #000;
+    color: #100162;
     border-radius: 7px;
-    border: 1px solid #010101;
-    box-shadow: 0 0 0 10px #fff;
+    border: 1px solid #100162;
+    box-shadow: 0px 9px 10px -11px #100162;
     position: relative;
     cursor: pointer;
     flex-shrink: 0;
@@ -129,6 +145,21 @@ export const UsedCards = styled.div`
       border-radius: 10px;
       padding: 0px 6px 1px;
     }
+  }
+
+  &::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #100162;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #e56df6;
+    outline: 1px solid #e56df6;
+    border-radius: 10px;
   }
 `;
 

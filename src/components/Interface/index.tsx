@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import api from '../../services/api';
 import { Container, DecksContainer, Deck, Questions, UsedCards } from './styles';
-import cardImg from '../../images/card1.png';
+import cardImg from '../../images/carta-bg.png';
 
 interface IDeckData {
   name: string;
