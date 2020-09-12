@@ -1,16 +1,17 @@
 import React from 'react';
 import GlobalStyle from './styles/global';
-import Board from './components/Board';
-import Interface from './components/Interface';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppProvider from './hooks/AppProvider';
+import Routes from './routes';
 
 const Game: React.FC = () => {
   return (
-    <>
-      <Board>
-        <Interface />
-      </Board>
-      <GlobalStyle />
-    </>
+    <Router>
+      <AppProvider>
+        <Routes />
+        <GlobalStyle />
+      </AppProvider>
+    </Router>
   );
 };
 
