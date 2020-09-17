@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Container, QuestionSelector } from './styles';
+import { Container, QuestionSelector, GameStatus } from './styles';
 
 import Status from '../../components/Status';
 import { useGameInstance } from '../../hooks/gameInstance';
@@ -59,42 +59,35 @@ const Board: React.FC = () => {
   }
 
   return (
-    <Container>
+    <Container
+      questionElement={questionElement}
+    >
 
       <Status />
-
-      <p>
-        Fase: {level}
-      </p>
-
       <QuestionSelector
+        isHidden={!!question}
         onClick={handleSelectQuestion}
       >
-        <div>
-          deck de perguntas
-        </div>
+        Nova pergunta
       </QuestionSelector>
 
-      <p>{questionElement}</p>
-
       {question && (
-
         <Questions
+          questionElementValue={questionElement}
           questionText={question}
           handleAnswer={handleAnswer}
         />
 
       )}
-
-      <div onClick={logElementalState}>
-        log
-      </div>
-
-      {warning && <p>warning: {warning}</p>}
-      {currentCycle && <p>current cycle: {currentCycle}</p>}
-      {dificulty && <p>dificulty: {dificulty}</p>}
-
+      <GameStatus>
+        <p>Fase: {level}</p>
+        {<p>Rodada: {currentCycle}</p>}
+        {<p>Dificuldade: {dificulty}</p>}
+        <button onClick={logElementalState}>log</button>
+        {warning && <p>Aviso: {warning}</p>}
+      </GameStatus>
       {isCycleEnd && <EndOfCycle />}
+
     </Container>
   );
 }

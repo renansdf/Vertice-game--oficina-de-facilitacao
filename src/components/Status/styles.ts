@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface IElementalStatusProps {
+  isComplete: boolean;
+}
 
 export const Container = styled.div`
   display: flex;
@@ -7,22 +11,30 @@ export const Container = styled.div`
 
   width: 90%;
   max-width: 1000px;
+  margin-bottom: 30px;
 `;
 
-export const ElementStatus = styled.div`
+export const ElementStatus = styled.div<IElementalStatusProps>`
   display: flex;
   flex-direction:column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  width: 24%;
 
   img{
     margin-bottom: 20px;
-    width: 90%;
     height: auto;
+    max-height: 150px;
   }
 
   div{
     width: 90%;
     font-size: 20px;
+    text-align: center;
   }
+
+  ${props => props.isComplete && css`
+    background-color: #e5ffe5;
+  `}
 `;

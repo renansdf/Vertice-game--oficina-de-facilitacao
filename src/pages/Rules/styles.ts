@@ -23,7 +23,6 @@ export const AnimationContainer = styled.div`
   padding: 5vh 0;
 
   a{
-
     background-color: #e56df6;
     color: #300d9d;
     padding: 14px 36px;
@@ -35,6 +34,7 @@ export const AnimationContainer = styled.div`
     box-shadow: 10px 10px 0px 0px #300d9d;
     transition: .4s;
     text-decoration: none;
+    margin-top: 40px;
 
     &:hover{
       transform: translateY(-6px);
@@ -45,9 +45,12 @@ export const AnimationContainer = styled.div`
 
 export const Content = styled.div`
   width: 90%;
+  max-width: 800px;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
 
   h1, strong{
     font-size: 30px;
@@ -55,15 +58,15 @@ export const Content = styled.div`
     display: block;
   }
 
+  h2{
+    margin-top: 50px;
+  }
+
   p + strong{
     margin-top: 20px;
   }
 
-  div:first-child{
-    width: 65%;
-  }
-
-  div:last-child{
+  aside{
     width: 30%;
   }
 
@@ -75,3 +78,16 @@ export const Content = styled.div`
   }
 `;
 
+export const PassoAPasso = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  > div{
+    width: 45%;
+    p{
+      font-size: 12px;
+    }
+  }
+`;

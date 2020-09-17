@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useGameInstance } from '../../hooks/gameInstance';
+import Status from '../Status';
 import { Container } from './styles';
 
 interface IElementalState {
@@ -45,9 +46,9 @@ const EndOfCycle: React.FC = () => {
 
   return (
     <Container>
-      Fim do ciclo!
+      <h1>Fim do ciclo! sua pontuação:</h1>
 
-      sua pontuação:
+      {<Status />}
 
       <button onClick={handleClosePopup}>Continuar para o próximo ciclo</button>
     </Container>

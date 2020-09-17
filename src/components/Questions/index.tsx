@@ -3,11 +3,13 @@ import { Container, AnswerButton } from './styles';
 
 interface IQuestionsProps {
   questionText: string;
+  questionElementValue?: string;
   handleAnswer: (answer: string[]) => void;
 }
 
-const Questions: React.FC<IQuestionsProps> = ({ questionText, handleAnswer }) => {
+const Questions: React.FC<IQuestionsProps> = ({ questionText, handleAnswer, questionElementValue }) => {
   const [question, setQuestion] = useState<string>();
+  const [questionElement, setQuestionElement] = useState<string>();
   const [terra, setTerra] = useState<boolean>(false);
   const [fogo, setFogo] = useState<boolean>(false);
   const [agua, setAgua] = useState<boolean>(false);
@@ -46,29 +48,29 @@ const Questions: React.FC<IQuestionsProps> = ({ questionText, handleAnswer }) =>
 
   useEffect(() => {
     setQuestion(questionText);
-  }, [questionText]);
+    setQuestionElement(questionElementValue);
+  }, [questionText, questionElementValue]);
 
   return (
     <Container>
-      <p>
-        {question}
-      </p>
+      <span>{questionElement}</span>
+      <p>{question}</p>
 
       <div>
         <AnswerButton isChecked={terra} onClick={() => handleElementSelect("terra")}>
-          <p>Terra</p>
+          Terra
         </AnswerButton>
 
         <AnswerButton isChecked={fogo} onClick={() => handleElementSelect("fogo")}>
-          <p>fogo</p>
+          fogo
         </AnswerButton>
 
         <AnswerButton isChecked={agua} onClick={() => handleElementSelect("agua")}>
-          <p>agua</p>
+          agua
         </AnswerButton>
 
         <AnswerButton isChecked={ar} onClick={() => handleElementSelect("ar")}>
-          <p>ar</p>
+          ar
         </AnswerButton>
       </div>
 

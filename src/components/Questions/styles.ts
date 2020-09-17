@@ -6,15 +6,15 @@ interface IContainerProps {
 
 export const Container = styled.div`
   width: 90%;
-  background-color: rgb(16 1 98 / 18%);
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
   border-radius: 11px;
+  background-color: #fff;
+  padding: 40px 0%;
 
   p{
-    height: 24vh;
     font-size: 22px;
     max-width: 800px;
     text-align: center;
@@ -30,46 +30,39 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: 15px 20px;
+  }
 
     button{
-      transition: all .4s;
-      text-transform: uppercase;
-      background: none;
+      background-color: #e56df6;
+      color: #300d9d;
+      padding: 14px 36px;
       border: none;
-      margin: 0px;
-      background-color: #fff;
-      color: #100162;
-      border-radius: 0px;
-      padding: 12px 15px;
-      font-size: 13px;
-      letter-spacing: .6px;
-      box-shadow: 0 7px 0 0 #100162, 0 10px 5px 0px #e56df6;
-      border-left: 1px solid #100162;
-      border-right: 1px solid #100162;
-      &:hover{
-        transform: translateY(2px);
-        box-shadow: 0 5px 0 0 #100162, 0 8px 5px 0px #e56df6;
-      }
-      &:first-child{
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-        border: none;
-      }
+      font-size: 22px;
+      line-height: 1.4em;
+      letter-spacing: .5px;
+      font-weight: bold;
+      box-shadow: 10px 10px 0px 0px #300d9d;
+      transition: .4s;
+      cursor: pointer;
 
-      &:last-child{
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
-        border: none;
+      &:hover{
+        transform: translateY(-6px);
+        box-shadow: 16px 16px 0px 0px #300d9d;
       }
     }
-  }
 `;
 
 export const AnswerButton = styled.div<IContainerProps>`
   transition: all 0.3s;
-  background-color: grey;
+  background-color: pink;
+  padding: 10px 30px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
 
   ${props => props.isChecked === true && css`
-    background-color: blue;
+    background-color: #9f37f5;
+    color: #fff;
   `}
 `;

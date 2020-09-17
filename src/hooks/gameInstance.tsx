@@ -62,11 +62,12 @@ const GameInstanceProvider: React.FC = ({ children }) => {
     let updateObject: IElementalState = { ...elementalState };
     const goalScore = baseScore + dificulty;
     const completedElements = [];
+    let isComplete: boolean = false;
+
     for (const [key, value] of Object.entries(elementalState)) {
       if (answerScore[key]) {
         const finalValue = value.score + answerScore[key];
 
-        let isComplete: boolean = false;
         (finalValue >= goalScore) ? isComplete = true : isComplete = false;
 
         if (isComplete) {
@@ -74,6 +75,10 @@ const GameInstanceProvider: React.FC = ({ children }) => {
         }
 
         updateObject = { ...updateObject, [key]: { isComplete, score: finalValue } }
+      } else {
+        if (value.isComplete) {
+          completedElements.push(key);
+        }
       }
     }
 

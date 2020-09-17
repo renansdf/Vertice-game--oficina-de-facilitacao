@@ -14,15 +14,17 @@ const Configs: React.FC = () => {
 
 
   return (
-    <Container>Configs:
-
-      <label>Selecione a etapa / fase do jogo</label>
-      <select onChange={handleChangeLevel}>
-        {gameLevels && gameLevels.map(level => (
-          <option key={level} value={level}>{level}</option>
-        ))}
-      </select>
-      <Link to="/board">Confirmar e começar o jogo!</Link>
+    <Container>
+      <div>
+        <h1>Configurações iniciais do jogo</h1>
+        <label>Selecione a etapa / fase do jogo</label>
+        <select onChange={handleChangeLevel}>
+          {gameLevels && gameLevels.map(level => (
+            <option key={level} value={level}>{level}</option>
+          ))}
+        </select>
+        <Link to="/board">Confirmar e começar o jogo!</Link>
+      </div>
     </Container>
   );
 }
