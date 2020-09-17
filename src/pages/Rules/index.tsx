@@ -1,21 +1,28 @@
 import React from 'react';
 
-import { AnimationContainer, Content, PassoAPasso } from './styles';
+import { AnimationContainer, Content, PassoAPasso, Cover } from './styles';
+import logoVertice from '../../images/logo-vertice-branca.png';
 import { Link } from 'react-router-dom';
 
 const Rules: React.FC = () => {
   return (
     <AnimationContainer>
+
+      <Cover>
+        <img src={logoVertice} alt="Vértice logo" />
+        <div>
+          <h1>Jogo da colheita</h1>
+          <p>
+            Você é um pesquisador que deseja aprofundar seus conhecimentos. Separamos pra você alguns desafios que vão te fazer pensar em como resolver problemas de um jeito diferente. Aqui você vai aprender a mudar sua abordagem de acordo com a situação e ouvir as histórias de sábios convidados sobre os problemas que você vai encontrar. Junto de outros pesquisadores, você poderá compartilhar vivências e pedir ajuda quando precisar.
+          </p>
+
+          <p>
+            Seu objeto de estudo durante o jogo será a influência dos 4 elementos da natureza no resultado da colheita. Para vencer, será necessário prestar atenção no impacto de cada elemento, e entender como manipular a situação a seu favor a partir do arquétipo de cada elemento.
+          </p>
+        </div>
+      </Cover>
+
       <Content>
-        <h1>Jogo da colheita</h1>
-        <p>
-          Você é um pesquisador que deseja aprofundar seus conhecimentos. Separamos pra você alguns desafios que vão te fazer pensar em como resolver problemas de um jeito diferente. Aqui você vai aprender a mudar sua abordagem de acordo com a situação e ouvir as histórias de sábios convidados sobre os problemas que você vai encontrar. Junto de outros pesquisadores, você poderá compartilhar vivências e pedir ajuda quando precisar.
-        </p>
-
-        <p>
-          Seu objeto de estudo durante o jogo será a influência dos 4 elementos da natureza no resultado da colheita. Para vencer, será necessário prestar atenção no impacto de cada elemento, e entender como manipular a situação a seu favor a partir do arquétipo de cada elemento.
-        </p>
-
         <h2>Como jogar?</h2>
         <PassoAPasso>
           <div>
@@ -37,9 +44,9 @@ const Rules: React.FC = () => {
         </PassoAPasso>
 
         <h2>Elementos</h2>
-        <p>
+        <strong>
           Cada elemento tem um significado, acompanhe abaixo cada um deles
-        </p>
+        </strong>
         <PassoAPasso>
           <div>
             <h3>Fogo</h3>

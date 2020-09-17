@@ -6,9 +6,10 @@ import { useGameInstance } from '../../hooks/gameInstance';
 import { useDeck } from '../../hooks/deckProvider';
 import Questions from '../../components/Questions';
 import EndOfCycle from '../../components/EndOfCycle';
+import Button from '../../components/Button';
 
 const Board: React.FC = () => {
-  const { availableElements, level, updateElementalState, elementalState, isCycleEnd, currentCycle, dificulty, cycleScoreHistory } = useGameInstance();
+  const { availableElements, level, updateElementalState, elementalState, isCycleEnd, currentCycle, dificulty, cycleScoreHistory, baseScore } = useGameInstance();
   const { contextDeck, updateDeck } = useDeck();
   const [warning, updateWarning] = useState<string>();
   const [question, setQuestion] = useState<string>();
@@ -81,9 +82,10 @@ const Board: React.FC = () => {
       )}
       <GameStatus>
         <p>Fase: {level}</p>
-        {<p>Rodada: {currentCycle}</p>}
-        {<p>Dificuldade: {dificulty}</p>}
-        <button onClick={logElementalState}>log</button>
+        <p>Rodada: {currentCycle}</p>
+        <p>Dificuldade: {dificulty}</p>
+        <p>Pontos necessários: {baseScore + dificulty}</p>
+        <Button onClick={logElementalState}>log</Button>
         {warning && <p>Aviso: {warning}</p>}
       </GameStatus>
       {isCycleEnd && <EndOfCycle />}

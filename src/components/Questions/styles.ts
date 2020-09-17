@@ -1,17 +1,29 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface IContainerProps {
   isChecked: boolean;
 }
 
+const appearFromBottom = keyframes`
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const Container = styled.div`
-  width: 90%;
+  animation: ${appearFromBottom} .6s;
+  width: auto;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  border-radius: 11px;
+  border-radius: 30px;
   background-color: #fff;
+  box-shadow: 0 18px 30px -15px #1d09587d;
   padding: 40px 0%;
 
   p{
@@ -31,38 +43,24 @@ export const Container = styled.div`
     justify-content: center;
     padding: 15px 20px;
   }
-
-    button{
-      background-color: #e56df6;
-      color: #300d9d;
-      padding: 14px 36px;
-      border: none;
-      font-size: 22px;
-      line-height: 1.4em;
-      letter-spacing: .5px;
-      font-weight: bold;
-      box-shadow: 10px 10px 0px 0px #300d9d;
-      transition: .4s;
-      cursor: pointer;
-
-      &:hover{
-        transform: translateY(-6px);
-        box-shadow: 16px 16px 0px 0px #300d9d;
-      }
-    }
 `;
 
 export const AnswerButton = styled.div<IContainerProps>`
   transition: all 0.3s;
-  background-color: pink;
-  padding: 10px 30px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px solid #1d0958;
+  padding: 8px 24px;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+  margin: 0 5px;
+  font-weight: 700;
 
   ${props => props.isChecked === true && css`
-    background-color: #9f37f5;
+    background: rgb(134,27,241);
+    background: linear-gradient(324deg, rgba(134,27,241,1) 0%, rgba(48,13,157,1) 100%);
     color: #fff;
   `}
 `;

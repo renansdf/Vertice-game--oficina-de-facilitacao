@@ -1,6 +1,25 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromBottom = keyframes`
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from{
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.div`
+  animation: ${fadeIn} .2s;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,28 +30,17 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content:center;
   align-items:center;
-  color: #000;
+  background: rgb(134,27,241);
+  background: linear-gradient(324deg, rgba(134,27,241,1) 0%, rgba(48,13,157,1) 100%);
+  color: #fff;
 
   h1{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 50px;
   }
 
-  button{
-    background-color: #e56df6;
-    color: #300d9d;
-    padding: 14px 36px;
-    border: none;
-    font-size: 22px;
-    line-height: 1.4em;
-    letter-spacing: .5px;
-    font-weight: bold;
-    box-shadow: 10px 10px 0px 0px #300d9d;
-    transition: .4s;
-    cursor: pointer;
-
-    &:hover{
-      transform: translateY(-6px);
-      box-shadow: 16px 16px 0px 0px #300d9d;
-    }
+  h1, div, a, button{
+    animation: ${appearFromBottom} .6s;
   }
 `;

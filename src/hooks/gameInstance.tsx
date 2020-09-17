@@ -30,6 +30,7 @@ interface IGameInstanceContext {
   currentCycle: number;
   setCurrentCycle: (value: number) => void;
   dificulty: number;
+  baseScore: number;
 }
 
 const GameInstanceContext = createContext<IGameInstanceContext>({} as IGameInstanceContext);
@@ -91,7 +92,7 @@ const GameInstanceProvider: React.FC = ({ children }) => {
   }, [elementalState, baseScore, dificulty]);
 
   return (
-    <GameInstanceContext.Provider value={{ level, setLevel, elementalState, availableElements, updateElementalState, isCycleEnd, setBaseScore, setDificulty, setIsCycleEnd, cycleScoreHistory, setCycleScoreHistory, currentCycle, setCurrentCycle, dificulty, setElementalState }}>
+    <GameInstanceContext.Provider value={{ level, setLevel, elementalState, availableElements, updateElementalState, isCycleEnd, setBaseScore, setDificulty, setIsCycleEnd, cycleScoreHistory, setCycleScoreHistory, currentCycle, setCurrentCycle, dificulty, setElementalState, baseScore }}>
       {children}
     </GameInstanceContext.Provider>
   );

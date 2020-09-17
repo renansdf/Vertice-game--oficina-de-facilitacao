@@ -12,7 +12,6 @@ const Configs: React.FC = () => {
     setLevel(element.target.value);
   }, [setLevel]);
 
-
   return (
     <Container>
       <div>
@@ -23,8 +22,8 @@ const Configs: React.FC = () => {
             <option key={level} value={level}>{level}</option>
           ))}
         </select>
-        <Link to="/board">Confirmar e começar o jogo!</Link>
       </div>
+      <Link to="/board">Confirmar e começar o jogo!</Link>
     </Container>
   );
 }

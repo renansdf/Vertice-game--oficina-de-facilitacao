@@ -10,13 +10,12 @@ export default createGlobalStyle`
 
   body{
     background: #fff;
-    color: #300d9d;
+    color: #230b6f;
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button{
-    font-family: 'Merienda One', cursive;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
   }
 

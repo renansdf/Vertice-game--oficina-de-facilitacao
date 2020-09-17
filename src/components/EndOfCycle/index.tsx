@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useGameInstance } from '../../hooks/gameInstance';
+import Button from '../Button';
 import Status from '../Status';
 import { Container } from './styles';
 
@@ -50,7 +51,7 @@ const EndOfCycle: React.FC = () => {
 
       {<Status />}
 
-      <button onClick={handleClosePopup}>Continuar para o próximo ciclo</button>
+      <Button onClick={handleClosePopup}>Continuar para o próximo ciclo</Button>
     </Container>
   );
 }

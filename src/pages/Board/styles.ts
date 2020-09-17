@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface IQuestionSelectorProps {
   isHidden: boolean;
@@ -8,7 +8,26 @@ interface IContainerProps {
   questionElement?: string;
 }
 
+const appearFromBottom = keyframes`
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from{
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+`;
+
 export const Container = styled.div<IContainerProps>`
+  animation: ${fadeIn} 0.6s;
   display: flex;
   flex: 1;
   height: 100vh;
@@ -18,39 +37,50 @@ export const Container = styled.div<IContainerProps>`
   justify-content: center;
   padding-bottom: 70px;
 
+  transition: all .6s;
+
   ${props => props.questionElement === 'terra' && css`
-    background-color: #e4b393d4;
+    background: rgba(235,185,152,1);
+    background: linear-gradient(324deg, rgba(122,59,18,1) 0%, rgba(235,185,152,1) 93%);
   `}
 
   ${props => props.questionElement === 'fogo' && css`
-    background-color: #ffb3b3;
+    background: rgba(255,167,167,1);
+    background: linear-gradient(324deg, rgba(226,81,58,1) 0%, rgba(255,167,167,1) 100%);
   `}
 
   ${props => props.questionElement === 'agua' && css`
-    background-color: #b3daff;
+    background: rgba(179,218,255,1);
+    background: linear-gradient(324deg, rgba(27,157,241,1) 0%, rgba(179,218,255,1) 100%);
   `}
 
   ${props => props.questionElement === 'ar' && css`
-    background-color: #fffbe3;
+    background: rgba(255,251,227,1);
+    background: linear-gradient(324deg, rgba(255,219,0,1) 0%, rgba(255,251,227,1) 100%);
   `}
 `;
 
 export const QuestionSelector = styled.div<IQuestionSelectorProps>`
-  background-color: #e56df6;
-  color: #300d9d;
-  padding: 14px 36px;
+  animation: ${appearFromBottom} 0.6s;
   border: none;
-  font-size: 22px;
   line-height: 1.4em;
   letter-spacing: .5px;
-  font-weight: bold;
-  box-shadow: 10px 10px 0px 0px #300d9d;
   transition: .4s;
   cursor: pointer;
+  background: rgb(134,27,241);
+  background: linear-gradient(324deg, rgba(134,27,241,1) 0%, rgba(48,13,157,1) 100%);
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 0px 0px #ff74e9;
+  margin-top: 15px;
 
   &:hover{
     transform: translateY(-6px);
-    box-shadow: 16px 16px 0px 0px #300d9d;
+    box-shadow: 16px 16px 0px 0px #ff74e9;
   }
 
   ${props => props.isHidden && css`
@@ -59,13 +89,15 @@ export const QuestionSelector = styled.div<IQuestionSelectorProps>`
 `;
 
 export const GameStatus = styled.div`
+  animation: ${appearFromBottom} 0.6s;
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
   top: auto;
-  background-color: purple;
   color: #fff;
+  background: rgb(134,27,241);
+  background: linear-gradient(324deg, rgba(134,27,241,1) 0%, rgba(48,13,157,1) 100%);
 
   display: flex;
   justify-content:center;
@@ -77,20 +109,5 @@ export const GameStatus = styled.div`
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
-  }
-
-  button{
-    outline: none;
-    background-color:transparent;
-    border: 1px solid #fff;
-    border-radius: 3px;
-    color: #fff;
-    padding: 2px 20px;
-    transition: all 0.4s;
-
-    &:hover{
-      background-color: #fff;
-      color: purple;
-    }
   }
 `;

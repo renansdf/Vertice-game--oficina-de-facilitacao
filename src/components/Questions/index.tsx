@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import Button from '../Button';
 import { Container, AnswerButton } from './styles';
 
 interface IQuestionsProps {
@@ -53,7 +54,7 @@ const Questions: React.FC<IQuestionsProps> = ({ questionText, handleAnswer, ques
 
   return (
     <Container>
-      <span>{questionElement}</span>
+      <span>elemento da pergunta: {questionElement}</span>
       <p>{question}</p>
 
       <div>
@@ -74,7 +75,7 @@ const Questions: React.FC<IQuestionsProps> = ({ questionText, handleAnswer, ques
         </AnswerButton>
       </div>
 
-      <button onClick={handleAnswerSubmit}>Enviar resposta</button>
+      <Button onClick={handleAnswerSubmit}>Enviar resposta</Button>
 
     </Container>
   );
