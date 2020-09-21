@@ -57,27 +57,53 @@ const Rules: React.FC = () => {
 
         <h2>Elementos</h2>
         <strong>
-          Cada elemento tem um significado, acompanhe abaixo cada um deles e exemplos de perguntas que serão feitas durante o jogo
+          Cada elemento tem um significado, acompanhe abaixo cada um deles com exemplos de perguntas que serão feitas durante o jogo
         </strong>
         <PassoAPasso>
-          <div className="fogo">
-            <h3>Fogo</h3>
-            <h4>Propósito</h4>
-            <p>Exemplo de pergunta: Qual o propósito de iniciarmos a facilitação propondo a dinâmica da “chegança” (check in)?</p>
-          </div>
           <div className="terra">
             <h3>Terra</h3>
-            <h4>Ação</h4>
+            <section>
+              <h4>execução</h4>
+              <h4>concreto</h4>
+              <h4>físico</h4>
+              <h4>memória</h4>
+              <h4>tangível</h4>
+            </section>
             <p>Exemplo de pergunta: Faça ou convide alguém a fazer uma chegança (check-in) agora.</p>
+          </div>
+          <div className="fogo">
+            <h3>Fogo</h3>
+            <section>
+              <h4>propósito</h4>
+              <h4>inspiração</h4>
+              <h4>essência</h4>
+              <h4>ideais</h4>
+              <h4>ideias</h4>
+              <h4>sentido</h4>
+              <h4>motivação</h4>
+            </section>
+            <p>Exemplo de pergunta: Qual o propósito de iniciarmos a facilitação propondo a dinâmica da “chegança” (check in)?</p>
           </div>
           <div className="agua">
             <h3>Água</h3>
-            <h4>Método</h4>
+            <section>
+              <h4>método</h4>
+              <h4>fluxo</h4>
+              <h4>processo</h4>
+              <h4>ir e vir</h4>
+              <h4>transformação</h4>
+              <h4>mudança</h4>
+            </section>
             <p>Exemplo de pergunta: Cite algumas formas de como propor a chegança (check-in).</p>
           </div>
           <div className="ar">
             <h3>Ar</h3>
-            <h4>Relacionamento</h4>
+            <section>
+              <h4>relacionamento</h4>
+              <h4>comunicação</h4>
+              <h4>dentro e fora</h4>
+              <h4>coletivo</h4>
+            </section>
             <p>Exemplo de pergunta: Como a chegança (check-in) pode contribuir para gerar conexões entre pessoas do grupo?</p>
           </div>
         </PassoAPasso>
