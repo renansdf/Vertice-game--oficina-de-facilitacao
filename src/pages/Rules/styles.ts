@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import trianguloDireita from '../../images/meio-triangulo-direita.svg';
+import trianguloEsquerda from '../../images/triangulo-2.png';
+import bolasLinhas from '../../images/bg-2.png';
 
 export const AnimationContainer = styled.div`
   display: flex;
@@ -8,6 +10,11 @@ export const AnimationContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding-bottom: 100px;
+  background: url(${bolasLinhas});
+  background-position-y: 90%;
+  background-position-x: 90%;
+  background-repeat: no-repeat;
+  background-size: 340px;
 
   a{
     border: none;
@@ -97,6 +104,10 @@ export const Content = styled.div`
   text-align: center;
   padding-top: 40px;
   padding-bottom: 80px;
+  background: url(${trianguloEsquerda});
+  background-position-x: -400px;
+  background-position-y: center;
+  background-repeat: no-repeat;
 
   h2{
     font-weight: 700;
