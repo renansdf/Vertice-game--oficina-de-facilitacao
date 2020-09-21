@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Container, QuestionSelector, GameStatus, ElementsKeywords } from './styles';
+import { Container, QuestionSelector, GameStatus } from './styles';
 
 import Status from '../../components/Status';
 import { useGameInstance } from '../../hooks/gameInstance';
@@ -83,39 +83,6 @@ const Board: React.FC = () => {
         />
 
       )}
-
-      <ElementsKeywords>
-        <div>
-          <h3>Terra</h3>
-          <span>keyword 1</span>
-          <span>keyword 2</span>
-          <span>keyword 3</span>
-        </div>
-
-        <div>
-          <h3>Fogo</h3>
-          <span>keyword 1</span>
-          <span>keyword 2</span>
-          <span>keyword 3</span>
-        </div>
-
-        <div>
-          <h3>Água</h3>
-          <span>keyword 1</span>
-          <span>keyword 2</span>
-          <span>keyword 3</span>
-          <span>keyword 3</span>
-          <span>keyword 3</span>
-          <span>keyword 3</span>
-        </div>
-
-        <div>
-          <h3>Ar</h3>
-          <span>keyword 1</span>
-          <span>keyword 2</span>
-          <span>keyword 3</span>
-        </div>
-      </ElementsKeywords>
 
       <GameStatus>
         <p>Fase: {level}</p>

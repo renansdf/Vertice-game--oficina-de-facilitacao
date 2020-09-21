@@ -156,6 +156,16 @@ export const PassoAPasso = styled.div`
       margin-bottom: 0px;
     }
 
+    h4{
+      background-color: #ffffffd9;
+      color: #1d0958;
+      padding: 1px 4px;
+      margin: 8px 0;
+      font-size: 12px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+
     p{
       font-size: 12px;
       line-height: 1.3em;

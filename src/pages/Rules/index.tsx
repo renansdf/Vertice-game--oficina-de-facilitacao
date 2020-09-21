@@ -13,12 +13,24 @@ const Rules: React.FC = () => {
         <div>
           <h1>Jogo da colheita</h1>
           <p>
-            Você é um pesquisador que deseja aprofundar seus conhecimentos. Separamos pra você alguns desafios que vão te fazer pensar em como resolver problemas de um jeito diferente. Aqui você vai aprender a mudar sua abordagem de acordo com a situação e ouvir as histórias de sábios convidados sobre os problemas que você vai encontrar. Junto de outros pesquisadores, você poderá compartilhar vivências e pedir ajuda quando precisar.
+            Finalmente, num futuro (esperamos) não muito distante, aprendemos que cultivar é algo muito importante. Descobrimos que o cultivo, cultiva em nós, as habilidades de observar, intervir e cuidar da vida de forma colaborativa. Você, eu e outros como nós, estamos reunidos hoje para pesquisar sobre o cultivo, sobre como ele usa dos 4 elementos para se transformar.
           </p>
 
           <p>
-            Seu objeto de estudo durante o jogo será a influência dos 4 elementos da natureza no resultado da colheita. Para vencer, será necessário prestar atenção no impacto de cada elemento, e entender como manipular a situação a seu favor a partir do arquétipo de cada elemento.
+            Nesta jornada vamos aprender sobre o cultivo da facilitação colaborativa. Respondendo perguntas, pedindo ajuda de sábios convidados e seguindo a anfitriagem de um mestre do cultivo que nos apoiará no descobrimento de como os elementos ao interagir entre si, transformam a vida.
           </p>
+
+          <p>
+            Seu objetivo será responder colaborativamente as perguntas sobre facilitação no tempo acordado e da forma en que cada elemento se expressa. Cuidado! precisamos responder perguntas fogo, do jeito fogo e assim sucessivamente. Para vencer é necessário não só vivenciar o arquetipo de cada elemento mas cumrpir com os acordos combinados com seu grupo de pesquisa!
+          </p>
+
+          {/* <p>
+            Este é um jogo de perguntas e respostas, onde vamos discutir sobre os desafios, problemas e questões envolvidas durante um processo de facilitação. Nós utilizamos a natureza como metáfora pra conseguir enquadrar os diferentes assuntos e criar uma experiência que te ajude a lembrar sempre das diferentes abordagens possíveis.
+          </p> */}
+
+          {/* <p>
+            Assim, seu objeto de estudo durante o jogo será a influência dos 4 elementos da natureza no resultado da colheita. Cada elemento representa uma forma diferente de enxergar e abordar os problemas que você encontra durante uma facilitação: Terra é sobre AÇÃO, fogo é PROPÓSITO, água é MÉTODO e ar é RELACIONAMENTOS. Para vencer, será necessário prestar atenção no impacto de cada elemento, e entender como manipular a situação a seu favor a partir de cada um.
+          </p> */}
         </div>
       </Cover>
 
@@ -39,42 +51,41 @@ const Rules: React.FC = () => {
           </div>
           <div>
             <h3>4 - Pontuação</h3>
-            <p>Se a resposta tiver o mesmo elemento que a pergunta, e quanto mais elementos tiver a resposta, mais pontos você ganha.</p>
+            <p>Quanto mais elementos tiver na sua resposta mais pontos você faz. Tem também um bônus especial caso você consiga formular uma resposta que tem o mesmo elemento que a pergunta.</p>
           </div>
         </PassoAPasso>
 
         <h2>Elementos</h2>
         <strong>
-          Cada elemento tem um significado, acompanhe abaixo cada um deles
+          Cada elemento tem um significado, acompanhe abaixo cada um deles e exemplos de perguntas que serão feitas durante o jogo
         </strong>
         <PassoAPasso>
           <div className="fogo">
             <h3>Fogo</h3>
-            <p>perguntas e respostas com ...</p>
+            <h4>Propósito</h4>
+            <p>Exemplo de pergunta: Qual o propósito de iniciarmos a facilitação propondo a dinâmica da “chegança” (check in)?</p>
           </div>
           <div className="terra">
             <h3>Terra</h3>
-            <p>perguntas e respostas com <span>ação.</span></p>
-            <p>exemplo de pergunta: Faça um check in</p>
-            <p>exemplo de resposta: Eu cheguei hoje sentindo [descrever sentimento] e esperando [descrever expectativas]</p>
+            <h4>Ação</h4>
+            <p>Exemplo de pergunta: Faça ou convide alguém a fazer uma chegança (check-in) agora.</p>
           </div>
           <div className="agua">
             <h3>Água</h3>
-            <p>perguntas e respostas com <span>ação.</span></p>
-            <p>exemplo de pergunta: Faça um check in</p>
-            <p>exemplo de resposta: Eu cheguei hoje sentindo [descrever sentimento] e esperando [descrever expectativas]</p>
+            <h4>Método</h4>
+            <p>Exemplo de pergunta: Cite algumas formas de como propor a chegança (check-in).</p>
           </div>
           <div className="ar">
             <h3>Ar</h3>
-            <p>perguntas e respostas com <span>ação.</span></p>
-            <p>exemplo de pergunta: Faça um check in</p>
-            <p>exemplo de resposta: Eu cheguei hoje sentindo [descrever sentimento] e esperando [descrever expectativas]</p>
+            <h4>Relacionamento</h4>
+            <p>Exemplo de pergunta: Como a chegança (check-in) pode contribuir para gerar conexões entre pessoas do grupo?</p>
           </div>
         </PassoAPasso>
 
       </Content>
 
-      <Link to="/configuracoes">Continuar para configurações do jogo</Link>
+      {/* <Link to="/configuracoes">Continuar para configurações do jogo</Link> */}
+      <Link to="/board">Continuar</Link>
     </AnimationContainer>
   );
 }

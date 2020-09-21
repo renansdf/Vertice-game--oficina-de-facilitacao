@@ -115,7 +115,7 @@ export const GameStatus = styled.div`
   display: flex;
   justify-content:center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 
   p, button{
     margin: 0 10px;
@@ -125,32 +125,3 @@ export const GameStatus = styled.div`
   }
 `;
 
-export const ElementsKeywords = styled.div`
-  animation: ${appearFromBottom} 0.6s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px 5%;
-  position: absolute;
-  bottom: 57px;
-  background: rgb(134,27,241);
-  color: #fff;
-
-  div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24%;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  h3{
-    width: 100%;
-  }
-
-  span{
-    margin: 0 5px ;
-  }
-`;
