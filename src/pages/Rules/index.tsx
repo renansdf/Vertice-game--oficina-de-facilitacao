@@ -48,23 +48,23 @@ const Rules: React.FC = () => {
           Cada elemento tem um significado, acompanhe abaixo cada um deles
         </strong>
         <PassoAPasso>
-          <div>
+          <div className="fogo">
             <h3>Fogo</h3>
             <p>perguntas e respostas com ...</p>
           </div>
-          <div>
+          <div className="terra">
             <h3>Terra</h3>
             <p>perguntas e respostas com <span>ação.</span></p>
             <p>exemplo de pergunta: Faça um check in</p>
             <p>exemplo de resposta: Eu cheguei hoje sentindo [descrever sentimento] e esperando [descrever expectativas]</p>
           </div>
-          <div>
+          <div className="agua">
             <h3>Água</h3>
             <p>perguntas e respostas com <span>ação.</span></p>
             <p>exemplo de pergunta: Faça um check in</p>
             <p>exemplo de resposta: Eu cheguei hoje sentindo [descrever sentimento] e esperando [descrever expectativas]</p>
           </div>
-          <div>
+          <div className="ar">
             <h3>Ar</h3>
             <p>perguntas e respostas com <span>ação.</span></p>
             <p>exemplo de pergunta: Faça um check in</p>

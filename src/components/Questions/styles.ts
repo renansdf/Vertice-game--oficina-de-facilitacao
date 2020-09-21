@@ -28,7 +28,7 @@ export const Container = styled.div`
 
   p{
     font-size: 22px;
-    max-width: 800px;
+    max-width: 980px;
     text-align: center;
     padding: 30px;
     display: flex;

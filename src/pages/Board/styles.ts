@@ -6,6 +6,7 @@ interface IQuestionSelectorProps {
 
 interface IContainerProps {
   questionElement?: string;
+  hideTitle: boolean;
 }
 
 const appearFromBottom = keyframes`
@@ -32,12 +33,24 @@ export const Container = styled.div<IContainerProps>`
   flex: 1;
   height: 100vh;
   width: 100%;
-  flex-flow: column wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 70px;
+  padding-bottom: 150px;
 
   transition: all .6s;
+
+  h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  ${props => props.hideTitle && css`
+    h1{
+      display: none;
+    }
+  `}
 
   ${props => props.questionElement === 'terra' && css`
     background: rgba(235,185,152,1);
@@ -102,12 +115,42 @@ export const GameStatus = styled.div`
   display: flex;
   justify-content:center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 
   p, button{
     margin: 0 10px;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+`;
+
+export const ElementsKeywords = styled.div`
+  animation: ${appearFromBottom} 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 5%;
+  position: absolute;
+  bottom: 57px;
+  background: rgb(134,27,241);
+  color: #fff;
+
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24%;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  h3{
+    width: 100%;
+  }
+
+  span{
+    margin: 0 5px ;
   }
 `;
