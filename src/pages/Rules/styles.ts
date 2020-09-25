@@ -93,6 +93,13 @@ export const Cover = styled.div`
   p + p{
     margin-top: 20px;
   }
+
+  @media (max-width: 650px){
+    padding: 150px 0 20px;
+    h1{
+      text-align: center;
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -133,6 +140,14 @@ export const Content = styled.div`
     line-height: 1.5em;
     letter-spacing: 0.4px;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: 650px){
+    strong{
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 35px;
+    }
   }
 `;
 
@@ -208,5 +223,11 @@ export const PassoAPasso = styled.div`
   >div.ar{
     background: rgba(255,251,227,1);
     background: linear-gradient(324deg, rgba(207,179,5,1) 50%, rgba(245,230,137,1) 100%);
+  }
+
+  @media (max-width: 650px){
+    > div {
+      width: 100%;
+    }
   }
 `;
