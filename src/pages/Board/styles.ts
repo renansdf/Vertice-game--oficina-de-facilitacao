@@ -115,7 +115,7 @@ export const GameStatus = styled.div`
   display: flex;
   justify-content:center;
   align-items: center;
-  padding: 20px;
+  padding: 11px;
 
   p, button{
     margin: 0 10px;

@@ -6,7 +6,9 @@ import { useGameInstance } from '../../hooks/gameInstance';
 import { useDeck } from '../../hooks/deckProvider';
 import Questions from '../../components/Questions';
 import EndOfCycle from '../../components/EndOfCycle';
-import Button from '../../components/Button';
+// import Button from '../../components/Button';
+import ElementKeywords from '../../components/ElementKeywords';
+import Sidebar from '../../components/Sidebar';
 
 const Board: React.FC = () => {
   const { availableElements, level, updateElementalState, elementalState, isCycleEnd, currentCycle, dificulty, cycleScoreHistory, baseScore } = useGameInstance();
@@ -25,6 +27,16 @@ const Board: React.FC = () => {
 
     if (!filteredDeck.length) {
       updateWarning(`não há mais cartas de ${available} da fase ${level}`);
+      const randomQuestion = contextDeck[Math.floor(Math.random() * contextDeck.length)];
+
+      const updatedDeck = contextDeck.filter(
+        question =>
+          question.id !== randomQuestion.id
+      );
+
+      updateDeck(updatedDeck);
+      setQuestion(randomQuestion.fields.Pergunta);
+      setQuestionElement(randomQuestion.fields.Elemento);
       return;
     }
 
@@ -76,20 +88,25 @@ const Board: React.FC = () => {
       </QuestionSelector>
 
       {question && (
-        <Questions
-          questionElementValue={questionElement}
-          questionText={question}
-          handleAnswer={handleAnswer}
-        />
+        <>
+          <Questions
+            questionElementValue={questionElement}
+            questionText={question}
+            handleAnswer={handleAnswer}
+          />
 
+          <ElementKeywords />
+          <Sidebar />
+        </>
       )}
+
 
       <GameStatus>
         <p>Fase: {level}</p>
         <p>Rodada: {currentCycle}</p>
         <p>Dificuldade: {dificulty}</p>
         <p>Pontos necessários: {baseScore + dificulty}</p>
-        <Button onClick={logElementalState}>log</Button>
+        {/* <Button onClick={logElementalState}>log</Button> */}
         {warning && <p>Aviso: {warning}</p>}
       </GameStatus>
 

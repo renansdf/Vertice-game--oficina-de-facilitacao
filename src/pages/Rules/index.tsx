@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AnimationContainer, Content, PassoAPasso, Cover } from './styles';
 import logoVertice from '../../images/logo-vertice-branca.png';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Rules: React.FC = () => {
   return (
@@ -111,7 +111,7 @@ const Rules: React.FC = () => {
       </Content>
 
       {/* <Link to="/configuracoes">Continuar para configurações do jogo</Link> */}
-      {/* <Link to="/board">Continuar</Link> */}
+      <Link to="/board">Continuar</Link>
     </AnimationContainer>
   );
 }
