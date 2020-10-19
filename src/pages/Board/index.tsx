@@ -6,9 +6,9 @@ import { useGameInstance } from '../../hooks/gameInstance';
 import { useDeck } from '../../hooks/deckProvider';
 import Questions from '../../components/Questions';
 import EndOfCycle from '../../components/EndOfCycle';
-// import Button from '../../components/Button';
+import Button from '../../components/Button';
 import ElementKeywords from '../../components/ElementKeywords';
-import Sidebar from '../../components/Sidebar';
+// import Sidebar from '../../components/Sidebar';
 
 const Board: React.FC = () => {
   const { availableElements, level, updateElementalState, elementalState, isCycleEnd, currentCycle, dificulty, cycleScoreHistory, baseScore } = useGameInstance();
@@ -96,7 +96,7 @@ const Board: React.FC = () => {
           />
 
           <ElementKeywords />
-          <Sidebar />
+          {/* <Sidebar /> */}
         </>
       )}
 
@@ -106,7 +106,7 @@ const Board: React.FC = () => {
         <p>Rodada: {currentCycle}</p>
         <p>Dificuldade: {dificulty}</p>
         <p>Pontos necessários: {baseScore + dificulty}</p>
-        {/* <Button onClick={logElementalState}>log</Button> */}
+        <Button onClick={logElementalState}>log</Button>
         {warning && <p>Aviso: {warning}</p>}
       </GameStatus>
 
