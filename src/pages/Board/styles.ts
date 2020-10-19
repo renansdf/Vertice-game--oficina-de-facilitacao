@@ -123,5 +123,9 @@ export const GameStatus = styled.div`
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+
+  button{
+    padding: 0px 10px;
+  }
 `;
 
