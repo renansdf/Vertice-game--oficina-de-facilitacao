@@ -40,7 +40,7 @@ const GameInstanceProvider: React.FC = ({ children }) => {
   const [isCycleEnd, setIsCycleEnd] = useState<boolean>(false);
   const [baseScore, setBaseScore] = useState<number>(4);
   const [dificulty, setDificulty] = useState<number>(0);
-  const [level, setLevel] = useState<string>("2");
+  const [level, setLevel] = useState<string>("3");
   const [elementalState, setElementalState] = useState<IElementalState>({
     terra: { isComplete: false, score: 0, },
     agua: { isComplete: false, score: 0, },
